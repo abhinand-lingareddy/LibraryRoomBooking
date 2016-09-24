@@ -1,0 +1,20 @@
+<%= form_for :room, url: rooms_path do |f| %>
+    <p>
+      <%= f.label :roomnumber %><br>
+      <%= f.text_field :roomnumber %>
+    </p>
+
+    <p>
+      <%= f.label :buildingname %><br>
+      <%= f.text_field :buildingname %>
+    </p>
+
+    <p>
+      <%= f.label :capacity %><br>
+      <%= f.text_field :capacity %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
