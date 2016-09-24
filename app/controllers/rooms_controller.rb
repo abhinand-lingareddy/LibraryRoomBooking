@@ -1,3 +1,4 @@
+require 'date'
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
@@ -5,6 +6,8 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+
+
   end
 
   def create
@@ -25,8 +28,17 @@ class RoomsController < ApplicationController
   end
 
   def show
+    #date
+    start_date = Date.today
+    end_date = 7.days.from_now
+    @date = (start_date..end_date);
+
+    #time
+    @time=(0..23).select {|x| x.even? }
     @room = Room.find(params[:id])
   end
+
+
 
   private
   def room_params

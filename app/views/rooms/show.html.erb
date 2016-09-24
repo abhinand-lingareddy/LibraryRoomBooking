@@ -11,4 +11,10 @@
 <p>
   <strong>Capacity:</strong>
   <%= @room.capacity %>
+
+  <%= select_tag "date", options_for_select(@date) %>
+  <%= select_tag "time", options_for_select(@time) %>
+
+  <%= link_to 'List', rooms_path %>
+
 </p>
