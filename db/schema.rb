@@ -1,3 +1,4 @@
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -21,12 +22,14 @@ ActiveRecord::Schema.define(version: 20160924173146) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "rooms", force: :cascade do |t|
-    t.integer  "RoomNumber"
-    t.integer  "BuildingName"
-    t.integer  "Capacity"
+    t.integer  "roomnumber"
+    t.integer  "buildingname"
+    t.integer  "capacity"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
 end
+

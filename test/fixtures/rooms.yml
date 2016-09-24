@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  RoomNumber: 1
-  BuildingName: 1
-  Capacity: 1
+  roomnumber: 1
+  buildingname: 1
+  capacity: 1
 
 two:
-  RoomNumber: 1
-  BuildingName: 1
-  Capacity: 1
+  roomnumber: 1
+  buildingname: 1
+  capacity: 1
