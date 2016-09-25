@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Roombooking</title>
+  <title>Library Room Booking App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px
+    }
+  </style>
 </head>
 <body>
-
+<h1 style="font-family: 'Courier New'">Library Room Booking Application</h1>
+<hr>
 <%= yield %>
 
 </body>

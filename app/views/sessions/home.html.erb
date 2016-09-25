@@ -1,11 +1,9 @@
 <%= render 'notice' %>
-<h1>Home Page</h1>
-
+<h2>Home Page</h2>
 <p><%= link_to 'Logout', sessions_logout_path%></p>
 
 <p><%= link_to 'Profile', User.find(session[:user_id])%></p>
 <% if session[:user_id] && session[:admin]%>
 <p><%= link_to 'Manage Users', users_path%></p>
-<p><%= link_to 'Create New Room', new_room_path%></p>
 <% end %>
-<p><%= link_to 'Search Rooms', rooms_path%></p>
+<p><%= link_to 'Manage Rooms', rooms_path%></p>

@@ -1,7 +1,16 @@
 <%= render 'sessions/notice' %>
 <h1>Editing Profile</h1>
 
-<%= render 'form' %>
+<% if session[:user_id] = @user.id or (session[:user_id] and session[:admin])%>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back to Home', sessions_home_path %>
+  <hr>
+  <p><%= link_to 'Profile', @user %></p>
+
+  <% if session[:user_id]%>
+      <p>
+        <%= link_to 'Back to Home', sessions_home_path %>&nbsp&nbsp|&nbsp&nbsp
+        <%= link_to 'Logout', sessions_logout_path%>
+      </p>
+  <% end%>
+<% end%>

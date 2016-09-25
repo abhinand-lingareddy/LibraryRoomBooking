@@ -1,6 +1,11 @@
 <%= render 'sessions/notice' %>
-<h1>New User</h1>
+<h2>New User</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', users_path %>
+<br>
+<% if session[:user_id]%>
+    <%=link_to 'Back to Home', sessions_home_path%>
+<%else%>
+    <%=link_to 'Back to Login', sessions_login_path%>
+<%end%>

@@ -5,15 +5,11 @@
   </style>
 </head>
 
-
-<p><%= link_to 'Logout', sessions_logout_path%></p>
-<p><%= link_to 'Back to Home', sessions_home_path%></p>
 <% if session[:user_id] && session[:admin]%>
     <p><%= link_to 'Create New Room', new_room_path%></p>
 <% end %>
 <br>
-
-<h1>Search for Rooms</h1>
+<h2>Search for Rooms</h2>
 
 <%= form_tag(rooms_path, :method => "get", id: "search-form") do %>
     <p>Search By:<%= select_tag "field", options_for_select(@field) %></p>
@@ -43,3 +39,11 @@
       </tr>
   <% end %>
 </table>
+<br>
+<hr>
+<% if session[:user_id]%>
+    <p>
+      <%= link_to 'Back to Home', sessions_home_path %>&nbsp&nbsp|&nbsp&nbsp
+      <%= link_to 'Logout', sessions_logout_path%>
+    </p>
+<% end%>

@@ -1,7 +1,7 @@
 <%= render 'sessions/notice' %>
 
 <% if session[:admin]%>
-    <h1>Manage Users</h1>
+    <h2>Manage Users</h2>
 
     <table>
       <thead>
@@ -27,11 +27,14 @@
       </tbody>
     </table>
 
-
-    <p><%= link_to 'Create Admin', new_user_path %></p>
-    <p><%= link_to 'Back to Home', sessions_home_path%></p>
-
-    <p><%= link_to 'Logout', sessions_logout_path%></p>
+    <br>
+    <p><%= link_to 'Create New Admin', new_user_path %></p>
+    <% if session[:user_id]%>
+        <p>
+          <%= link_to 'Back to Home', sessions_home_path %>&nbsp&nbsp|&nbsp&nbsp
+          <%= link_to 'Logout', sessions_logout_path%>
+        </p>
+    <% end%>
 
 
 <% end%>

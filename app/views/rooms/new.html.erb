@@ -18,18 +18,18 @@
     <% end %>
 
     <p>
-      <%= f.label "Room Number" %>:
+      <%= f.label "Room Number" %><br>
       <%= f.text_field :roomnumber %>
     </p>
 
     <p>
-      <%= f.label "Building Name" %>:
+      <%= f.label "Building Name" %><br>
       <%= f.select :buildingname,{"James B Hunt"=>:hunt,"D H Hill"=>:hill} %>
     </p>
 
     <p>
-      <%= f.label "Capacity" %>:
-      <%= f.select :capacity,{"Small - 4 chairs"=>:small,"Medium - 6 chairs"=>:mediumm,"Large - 12 chairs"=>:large} %>
+      <%= f.label "Capacity" %><br>
+      <%= f.select :capacity,{"Small - 4 chairs"=>:small,"Medium - 6 chairs"=>:medium,"Large - 12 chairs"=>:large} %>
     </p>
 
     <p>

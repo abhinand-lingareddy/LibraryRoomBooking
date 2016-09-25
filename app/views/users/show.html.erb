@@ -1,5 +1,6 @@
 <%= render 'sessions/notice' %>
 
+<h2>Profile</h2>
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
@@ -14,6 +15,14 @@
   <strong>Admin:</strong>
   <%= @user.admin %>
 </p>
+<hr>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back to Home', sessions_home_path %>
+<% if session[:user_id]%>
+    <p><%= link_to 'Edit Profile', edit_user_path(@user) %></p>
+    <p>
+      <%= link_to 'Back to Home', sessions_home_path %>&nbsp&nbsp|&nbsp&nbsp
+      <%= link_to 'Logout', sessions_logout_path%>
+    </p>
+<% else%>
+    <p><%= link_to 'Back to Login', sessions_login_path %></p>
+<% end%>
