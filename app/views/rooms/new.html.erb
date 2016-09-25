@@ -23,12 +23,12 @@
 
     <p>
       <%= f.label "Building Name" %><br>
-      <%= f.text_field :buildingname %>
+      <%= f.select :buildingname,{:hunt=>:hunt,:hill=>:hill} %>
     </p>
 
     <p>
       <%= f.label "Capacity" %><br>
-      <%= f.text_field :capacity %>
+      <%= f.select :capacity,{:meduim=>:meduim,:small=>:small,:large=>:large} %>
     </p>
 
     <p>
