@@ -12,6 +12,32 @@
   <strong>Capacity:</strong>
   <%= @room.capacity %>
 
+<h2>Comments</h2>
+<% @room.bookings.each do |booking| %>
+    <p>
+      <strong>RoomNumber:</strong>
+      <%=@room.roomnumber %>
+    </p>
+
+    <p>
+      <strong>UserId:</strong>
+      <%= booking.user_id %>
+    </p>
+    <p>
+      <strong>Date:</strong>
+      <%= booking.date %>
+    </p>
+    <p>
+      <strong>starttime:</strong>
+      <%= booking.endtime-2%>
+    </p>
+    <p>
+      <strong>endtime:</strong>
+      <%= booking.endtime%>
+    </p>
+<% end %>
+
+
 
   <%= form_for([@room, @room.bookings.build]) do |f| %>
 <p>

@@ -34,7 +34,7 @@ class RoomsController < ApplicationController
     @date = (start_date..end_date);
 
     #time
-    @time=(0..23).select {|x| x.even? }
+    @time=(0..22).select {|x| x.even? }
     @room = Room.find(params[:id])
 
   end
