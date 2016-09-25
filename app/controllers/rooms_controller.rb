@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
     else
       @rooms =Room.all
     end
-    @field = ["Room Number","Building Name", "Capacity"]
+    @field = {"Room Number"=>"roomnumber","Building Name"=>"buildingname", "Capacity"=>"capacity"}
   end
 
   def new
