@@ -1,3 +1,4 @@
+<h1>Create Room</h1>
 <%= form_for :room, url: rooms_path do |f| %>
 
 
@@ -19,22 +20,22 @@
 
 
     <p>
-      <%= f.label :roomnumber %><br>
+      <%= f.label "Room Number" %><br>
       <%= f.text_field :roomnumber %>
     </p>
 
     <p>
-      <%= f.label :buildingname %><br>
-      <%= f.text_field :buildingname %>
+      <%= f.label "Building Name" %><br>
+      <%= f.select :buildingname,{:hunt=>:hunt,:hill=>:hill} %>
     </p>
 
     <p>
-      <%= f.label :capacity %><br>
-      <%= f.text_field :capacity %>
+      <%= f.label "Capacity" %><br>
+      <%= f.select :capacity,{:meduim=>:meduim,:small=>:small,:large=>:large} %>
     </p>
 
     <p>
-      <%= f.submit %>
+      <%= f.submit "Create Room"%>
     </p>
 <% end %>
 

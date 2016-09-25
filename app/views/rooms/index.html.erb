@@ -9,7 +9,7 @@
 
 
 <%= form_tag(rooms_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Rooms" %>
     <%= select_tag "field", options_for_select(@field) %>
     <%= submit_tag "Search" %>
 <% end %>

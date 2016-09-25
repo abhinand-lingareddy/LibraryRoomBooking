@@ -6,7 +6,6 @@
 <p><%= link_to 'Search Rooms', rooms_path%></p>
 
 <% if session[:user_id] && session[:admin]%>
-<p><%= link_to 'Manage Admins', users_path%></p>
-<p><%= link_to 'Manage Library Members', users_path%></p>
-<p><%= link_to 'Manage Rooms', rooms_path%></p>
+<p><%= link_to 'Manage Users', users_path%></p>
+<p><%= link_to 'Create Rooms', new_room_path%></p>
 <% end %>
