@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160925071319) do
+ActiveRecord::Schema.define(version: 20160925141805) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160925071319) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "bookings", ["endtime", "date", "room_id"], name: "index_bookings_on_endtime_and_date_and_room_id", unique: true
   add_index "bookings", ["room_id"], name: "index_bookings_on_room_id"
   add_index "bookings", ["user_id"], name: "index_bookings_on_user_id"
 
