@@ -1,5 +1,6 @@
 
   <h1>Log in</h1>
+  <%=flash[:notice] %>
 
       <%= form_tag(:action => 'login_attempt') do %>
           <p>Email:</br> <%= text_field_tag(:username) %></p>
