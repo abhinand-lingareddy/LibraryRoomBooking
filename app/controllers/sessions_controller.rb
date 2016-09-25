@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if authorized_user
       session[:user_id]= authorized_user.id
       session[:user_name] = authorized_user.name
+      session[:admin] = authorized_user.admin
       redirect_to(:controller => 'users',:action => 'index')
 
     else

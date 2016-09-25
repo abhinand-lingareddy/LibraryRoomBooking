@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>User Page</h1>
-<% if session[:user_id]%>
+
+
+<% if session[:admin]%>
     <h2>Listing Users</h2>
 
     <table>
