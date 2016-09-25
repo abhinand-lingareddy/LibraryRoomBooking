@@ -4,6 +4,12 @@ class Room < ActiveRecord::Base
   enum capacity: [ :small, :meduim, :large ]
 
   def self.search(field,search)
+    if field=="buildingname"
+      search=Room.buildingnames[search]
+    end
+    if field=="capacity"
+      search=Room.capacities[search]
+    end
       where("#{field}": "#{search}")
   end
 end
