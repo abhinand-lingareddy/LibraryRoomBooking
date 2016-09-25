@@ -6,11 +6,25 @@
 
 <h1>Rooms</h1>
 
+
+
+<%= form_tag(rooms_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= select_tag "field", options_for_select(@field) %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+
+
+
 <p>
   <%= link_to 'Create New Room', new_room_path %>
 </p>
 
+
+
 <table>
+
   <tr>
     <th>Room Number</th>
     <th>Building Name</th>

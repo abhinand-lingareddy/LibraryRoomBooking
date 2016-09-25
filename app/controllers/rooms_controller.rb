@@ -1,7 +1,12 @@
 require 'date'
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+    if params[:field]
+      @rooms = Room.search(params[:field],params[:search])
+    else
+      @rooms =Room.all
+    end
+    @field = ["roomnumber","capacity","buildingname"]
   end
 
   def new
