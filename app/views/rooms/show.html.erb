@@ -46,11 +46,11 @@
 
   <%= form_for([@room, @room.bookings.build]) do |f| %>
 <p>
-  <%= select_tag "date", options_for_select(@date) %>
-  <%= select_tag "time", options_for_select(@time) %>
+  Date: <%= select_tag "date", options_for_select(@date) %><br><br>
+  Time: <%= select_tag "time", options_for_select(@time) %>
 </p>
 <p>
-  <%= f.submit %>
+  <%= f.submit "Book Room"%>
 </p>
 
 <% end %>

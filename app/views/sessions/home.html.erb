@@ -7,5 +7,5 @@
 
 <% if session[:user_id] && session[:admin]%>
 <p><%= link_to 'Manage Users', users_path%></p>
-<p><%= link_to 'Create Rooms', new_room_path%></p>
+<p><%= link_to 'Create New Room', new_room_path%></p>
 <% end %>

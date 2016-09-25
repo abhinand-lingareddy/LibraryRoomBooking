@@ -1,30 +1,25 @@
 <head>
   <style>
-    td	{padding: 5px}
+    td,th	{padding: 5px}
   </style>
 </head>
 
-<h1>Rooms</h1>
 
+<p><%= link_to 'Logout', sessions_logout_path%></p>
+<p><%= link_to 'Back to Home', sessions_home_path%></p>
 
+<br>
+
+<h1>Search for Rooms</h1>
 
 <%= form_tag(rooms_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Rooms" %>
-    <%= select_tag "field", options_for_select(@field) %>
-    <%= submit_tag "Search" %>
+    <p>Search By:<%= select_tag "field", options_for_select(@field) %></p>
+    <p><%= text_field_tag :search, params[:search], placeholder: "Search Rooms" %></p>
+    <p><%= submit_tag "Search" %></p>
 <% end %>
 
-
-
-
-<p>
-  <%= link_to 'Create New Room', new_room_path %>
-</p>
-
-
-
+<br><br>
 <table>
-
   <tr>
     <th>Room Number</th>
     <th>Building Name</th>
@@ -36,7 +31,7 @@
         <td><%= room.roomnumber %></td>
         <td><%= room.buildingname %></td>
         <td><%= room.capacity %></td>
-        <td><%= link_to 'Profile', room_path(room) %></td>
+        <td><%= link_to 'Details', room_path(room) %></td>
         <td><%= link_to 'Delete', room_path(room),
                         method: :delete,
                         data: { confirm: 'Are you sure?' } %></td>
