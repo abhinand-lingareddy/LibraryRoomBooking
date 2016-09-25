@@ -4,6 +4,9 @@
 
 <p><%= link_to 'Profile', User.find(session[:user_id])%></p>
 <% if session[:user_id] && session[:admin]%>
-<p><%= link_to 'Manage Users', users_path%></p>
+    <p><%= link_to 'Manage Users', users_path%></p>
+    <p><%= link_to 'Manage Rooms', rooms_path%></p>
+<% else %>
+    <p><%= link_to 'Book Rooms', rooms_path%></p>
 <% end %>
-<p><%= link_to 'Manage Rooms', rooms_path%></p>
+

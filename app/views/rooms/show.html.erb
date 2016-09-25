@@ -5,12 +5,12 @@
 
 <h2>Details of Room</h2>
 <p>
-  <strong>RoomNumber:</strong>
+  <strong>Room Number:</strong>
   <%= @room.roomnumber %>
 </p>
 
 <p>
-  <strong>BuildingName:</strong>
+  <strong>Building Name:</strong>
   <%= @room.buildingname %>
 </p>
 
@@ -19,40 +19,33 @@
   <%= @room.capacity %>
 </p>
 
-<br>
+<hr>
 <h2>Reservations</h2>
 <ul>
 <% @room.bookings.each do |booking| %>
 <li>
-    <% if session[:user_id] && session[:admin]%>
-    <p>
-      <strong>Booked By:</strong>
-      <%= User.find(booking.user_id).email %>
-    </p>
+  <% if session[:user_id] == booking.user_id or session[:admin] %>
+      <strong>Booked By:</strong>&emsp;
+      <%= User.find(booking.user_id).email %>&emsp;&emsp;
+      <%= link_to 'Release Booking',[booking.room, booking],
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+      </br>
   <% end%>
-    <p>
-      <strong>Date:</strong>
-      <%= booking.date %>
-    </p>
-    <p>
-      <strong>starttime:</strong>
-      <%= booking.endtime-2%>
-    </p>
-    <p>
-      <strong>endtime:</strong>
-      <%= booking.endtime%>
-    </p>
-    <% if session[:user_id] == booking.user_id or session[:admin] %>
 
-    <td><%= link_to 'Release Booking',[booking.room, booking],
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
+  <strong>Date:</strong>&emsp;&emsp;&emsp;&emsp;
+  <%= booking.date %>
+  </br>
+
+  <strong>Slot:</strong>&emsp;&emsp;&emsp;&emsp;
+  <%= booking.endtime-2 %>:00 to <%= booking.endtime %>:00
+  </br>
+
+  <br>
 </li>
-    <br><br>
 <% end %>
 </ul>
-
+<hr>
 <h2>Book Room</h2>
 <p>
   <%= form_for([@room, @room.bookings.build]) do |f| %>
