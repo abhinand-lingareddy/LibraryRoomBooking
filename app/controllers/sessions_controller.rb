@@ -6,14 +6,21 @@ class SessionsController < ApplicationController
     authorized_user = User.authenticate(params[:username],params[:password])
     if authorized_user
       session[:user_id]= authorized_user.id
-      session[:user_name] = authorized_user.name
       session[:admin] = authorized_user.admin
-      redirect_to(:controller => 'users',:action => 'index')
+      redirect_to(:action => 'home')
 
     else
       flash[:notice] = "Invalid Username or Password"
       render "login"
     end
   end
-end
 
+  def home
+  end
+
+  def logout
+    session[:user_id] = nil
+    session[:admin] = nil
+    redirect_to :action => 'login'
+  end
+end

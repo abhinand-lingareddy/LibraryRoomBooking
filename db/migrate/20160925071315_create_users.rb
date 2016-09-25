@@ -9,6 +9,6 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-       User.create(:email=>"msardar@ncsu.edu", :name=>"Mohit S", :password=>"123", :admin=>true)
+    User.create(:email=>"admin@ncsu.edu", :name=>"SuperAdmin", :password=>"123", :admin=>true)
   end
 end

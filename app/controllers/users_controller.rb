@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    if session[:user_id] && session[:admin]
+      @user.admin = true
+    else
+      @user.admin = false
+    end
   end
 
   # GET /users/1/edit
