@@ -1,3 +1,5 @@
+<%= render 'notice' %>
+
 <p>
   <strong>RoomNumber:</strong>
   <%= @room.roomnumber %>
@@ -14,6 +16,8 @@
 
 <h2>Bookings</h2>
 <% @room.bookings.each do |booking| %>
+
+
     <p>
       <strong>RoomNumber:</strong>
       <%=@room.roomnumber %>
