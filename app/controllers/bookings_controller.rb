@@ -15,6 +15,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @room = Room.find(params[:room_id])
+    @booking = @room.bookings.find(params[:id])
+    @booking.destroy
+    redirect_to room_path(@room)
+  end
+
   def booking_params
     params.require(:booking).permit( :time)
   end

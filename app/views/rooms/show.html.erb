@@ -35,6 +35,11 @@
       <strong>endtime:</strong>
       <%= booking.endtime%>
     </p>
+    <% if session["userid"] == booking.user_id or session["admin"] %>
+    <td><%= link_to 'Delete',[booking.room, booking],
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
 <% end %>
 
 
