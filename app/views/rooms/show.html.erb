@@ -1,5 +1,6 @@
 <%= render 'sessions/notice' %>
 
+<h2>Details of Room</h2>
 <p>
   <strong>RoomNumber:</strong>
   <%= @room.roomnumber %>
@@ -13,20 +14,19 @@
 <p>
   <strong>Capacity:</strong>
   <%= @room.capacity %>
+</p>
 
-<h2>Bookings</h2>
+<br>
+<h2>Reservations</h2>
+<ul>
 <% @room.bookings.each do |booking| %>
-
-
+<li>
+    <% if session[:user_id] && session[:admin]%>
     <p>
-      <strong>RoomNumber:</strong>
-      <%=@room.roomnumber %>
+      <strong>Booked By:</strong>
+      <%= User.find(booking.user_id).email %>
     </p>
-
-    <p>
-      <strong>UserId:</strong>
-      <%= booking.user_id %>
-    </p>
+  <% end%>
     <p>
       <strong>Date:</strong>
       <%= booking.date %>
@@ -39,29 +39,24 @@
       <strong>endtime:</strong>
       <%= booking.endtime%>
     </p>
-    <% if session["userid"] == booking.user_id or session["admin"] %>
+    <% if session[:user_id] == booking.user_id or session[:admin] %>
+
     <td><%= link_to 'Delete',[booking.room, booking],
                     method: :delete,
                     data: { confirm: 'Are you sure?' } %></td>
     <% end %>
+</li>
+    <br><br>
 <% end %>
+</ul>
 
-
-
+<h2>Book Room</h2>
+<p>
   <%= form_for([@room, @room.bookings.build]) do |f| %>
-<p>
   Date: <%= select_tag "date", options_for_select(@date) %><br><br>
-  Time: <%= select_tag "time", options_for_select(@time) %>
-</p>
-<p>
+  Time: <%= select_tag "time", options_for_select(@time) %><br><br>
   <%= f.submit "Book Room"%>
+  <% end %>
 </p>
 
-<% end %>
-
-
-
-
-  <%= link_to 'List', rooms_path %>
-
-</p>
+<p><%= link_to 'Search Rooms', rooms_path %></p>

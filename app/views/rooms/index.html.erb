@@ -35,9 +35,11 @@
         <td><%= room.buildingname %></td>
         <td><%= room.capacity %></td>
         <td><%= link_to 'Details', room_path(room) %></td>
+        <% if session[:user_id] && session[:admin]%>
         <td><%= link_to 'Delete', room_path(room),
                         method: :delete,
                         data: { confirm: 'Are you sure?' } %></td>
+        <% end%>
       </tr>
   <% end %>
 </table>
