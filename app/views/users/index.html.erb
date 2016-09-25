@@ -1,6 +1,10 @@
 <%= render 'menuform' %>
 <p id="notice"><%= notice %></p>
 
+
+<%= link_to 'Logout', sessions_logout_path%>
+
+
 <% if session[:admin]%>
     <h1>User Page</h1>
     <h2>Listing Users</h2>
