@@ -36,6 +36,7 @@ class RoomsController < ApplicationController
     #time
     @time=(0..23).select {|x| x.even? }
     @room = Room.find(params[:id])
+
   end
 
 

@@ -12,8 +12,20 @@
   <strong>Capacity:</strong>
   <%= @room.capacity %>
 
+
+  <%= form_for([@room, @room.bookings.build]) do |f| %>
+<p>
   <%= select_tag "date", options_for_select(@date) %>
   <%= select_tag "time", options_for_select(@time) %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+
+
+
 
   <%= link_to 'List', rooms_path %>
 
