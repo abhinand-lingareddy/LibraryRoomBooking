@@ -4,8 +4,10 @@ one:
   email: MyString
   name: MyString
   password: MyString
+  admin: false
 
 two:
   email: MyString
   name: MyString
   password: MyString
+  admin: false

@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
 
   def create
 
-    if Booking.create(date:params[:date],endtime:params[:time],admin_id:session[:userid],room_id:params[:room_id])
+    if Booking.create(date:params[:date],endtime:params[:time],user_id:session[:userid],room_id:params[:room_id])
       @room = Room.find(params[:room_id])
       redirect_to room_path(@room)
     else
