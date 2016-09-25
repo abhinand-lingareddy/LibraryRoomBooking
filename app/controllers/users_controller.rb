@@ -16,9 +16,9 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     if session[:user_id] && session[:admin]
-      @user.admin = true
+      @user.update_attribute :admin, true
     else
-      @user.admin = false
+      @user.update_attribute :admin, false
     end
   end
 

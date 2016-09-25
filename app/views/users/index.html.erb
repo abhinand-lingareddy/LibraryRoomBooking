@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1>User Page</h1>
 
+<%= link_to 'Logout', sessions_logout_path%>
 
 <% if session[:admin]%>
     <h2>Listing Users</h2>

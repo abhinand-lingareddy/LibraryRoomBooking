@@ -1,6 +1,8 @@
 
 Rails.application.routes.draw do
 
+  root :to => 'sessions#login'
+
   get 'sessions/login'
   post '/sessions/login' , to: 'sessions#login_attempt'
 
