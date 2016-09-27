@@ -1,6 +1,6 @@
 <h1>&nbsp;</h1>
 <h1><strong>Library Room Booking Application</strong></h1>
-<p><strong>Deployed at&nbsp;<a href="http://library-room-booking.herokuapp.com/">http://library-room-booking.herokuapp.com/</a></strong></p>
+<p><strong>Deployed at&nbsp;<a href="https://ooddlibroombooking.herokuapp.com/">https://ooddlibroombooking.herokuapp.com/</a></strong></p>
 <p>This application has admins and library members as users.&nbsp;</p>
 <p>This application has a super admin by default whose credentials are</p>
 <p><strong>email:&nbsp;</strong><em>admin@ncsu.edu</em></p>
