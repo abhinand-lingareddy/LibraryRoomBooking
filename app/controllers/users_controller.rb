@@ -21,6 +21,22 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def history
+    user=User.find(session[:user_id])
+    bookings=user.bookings
+    today_date=Date.new
+    current_time=Time.now.hour
+    @old_booking=Array.new
+    @new_booking=Array.new
+    for booking in bookings
+      if booking.date<today_date or booking.endtime<current_time
+        @old_booking.append booking
+      else
+        @new_booking.append booking
+      end
+    end
+  end
+
   # POST /users
   # POST /users.json
   def create

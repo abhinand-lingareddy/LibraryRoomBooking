@@ -1,0 +1,36 @@
+<%= render 'sessions/notice' %>
+<h1>Current bookings</h1>
+<% @new_booking.each do |booking| %>
+
+
+
+
+      <strong>Date:</strong>&emsp;&emsp;&emsp;&emsp;
+      <%= booking.date %>
+      </br>
+
+      <strong>Slot:</strong>&emsp;&emsp;&emsp;&emsp;
+      <%= booking.endtime-2 %>:00 to <%= booking.endtime %>:00
+      </br>
+      <%= link_to 'Release Booking',[booking.room, booking],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+      </br>
+
+      <br>
+
+<% end %>
+<h1>Old bookings</h1>
+<% @old_booking.each do |booking| %>
+
+
+      <strong>Date:</strong>&emsp;&emsp;&emsp;&emsp;
+      <%= booking.date %>
+      </br>
+
+      <strong>Slot:</strong>&emsp;&emsp;&emsp;&emsp;
+      <%= booking.endtime-2 %>:00 to <%= booking.endtime %>:00
+      </br>
+
+      <br>
+<% end %>
