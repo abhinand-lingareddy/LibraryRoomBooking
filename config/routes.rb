@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 
   get 'sessions/logout'
 
-  get "users/history" => "users#history"
+  get 'users/history' => 'users#history'
+
+  get 'users/list_admins'
+  get 'users/list_members'
 
   resources :rooms do
     resources :bookings

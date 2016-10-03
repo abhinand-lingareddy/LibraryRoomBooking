@@ -7,6 +7,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def list_admins
+    @users = User.where(["admin = ?", true])
+  end
+
+  def list_members
+    @users = User.where(["admin = ?", false])
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
