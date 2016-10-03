@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     id=session[:user_id]
     user=User.find(id)
     bookings=user.bookings
-    today_date=Date.new
+    today_date=Date.today
     current_time=Time.now.hour
     @old_booking=Array.new
     @new_booking=Array.new
