@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :bookings
+  has_many :bookings, :dependent => :delete_all
   validates :email, :presence => true, uniqueness: true
 
   def self.authenticate(email="", password="")
