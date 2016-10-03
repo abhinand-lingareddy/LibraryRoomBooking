@@ -2,9 +2,36 @@
 <h1>Editing Profile</h1>
 
 <% if session[:user_id] = @user.id or (session[:user_id] and session[:admin])%>
-  <%= render 'form' %>
+    <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-  <hr>
+              <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Submit"%>
+        </div>
+    <% end %>
+
+
+
+    <hr>
   <p><%= link_to 'Profile', @user %></p>
 
   <% if session[:user_id]%>
