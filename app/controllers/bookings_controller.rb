@@ -6,12 +6,13 @@ class BookingsController < ApplicationController
 
 
   def create
-
-    if Booking.create(date:params[:date],endtime:(params[:time].to_i+2),user_id:session[:user_id],room_id:params[:room_id])
-      @room = Room.find(params[:room_id])
-      redirect_to room_path(@room)
-    else
-      #handle error
+    begin
+    Booking.create(date:params[:date],endtime:(params[:time].to_i+2),user_id:session[:user_id],room_id:params[:room_id])
+    @room = Room.find(params[:room_id])
+    redirect_to room_path(@room)
+    rescue Exception
+    flash["notice"]="your requested time slot has been already booked, please check the bellow table"
+    redirect_to room_path(params[:room_id])
     end
   end
 
