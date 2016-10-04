@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Thank you for booking, <%= @user.name %></h1>
+<p>
+  you booking room number <%= @room.roomnumber %>.<br>
+  you booking building name <%= @room.buildingname %>.<br>
+  you booking time  is on <%= @booking.date %> time between <%= @booking.endtime-2 %> to <%= @booking.endtime %>.<br>
+</p>
+<p>Thanks for using our service, Have a great day</p>
+</body>
+</html>
