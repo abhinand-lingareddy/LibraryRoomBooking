@@ -88,7 +88,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    if @user.id != 4
+    if @user.id != 1
       @user.destroy
       notice='User was successfully destroyed.'
     else
