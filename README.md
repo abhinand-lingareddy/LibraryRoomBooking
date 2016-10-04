@@ -1,11 +1,19 @@
-<h1>&nbsp;</h1>
 <h1><strong>Library Room Booking Application</strong></h1>
 <p><strong>Deployed at&nbsp;<a href="https://ooddlibroombooking.herokuapp.com/">https://ooddlibroombooking.herokuapp.com/</a></strong></p>
-<p>This application has admins and library members as users.&nbsp;</p>
-<p>This application has a super admin by default whose credentials are</p>
-<p><strong>email:&nbsp;</strong><em>admin@ncsu.edu</em></p>
-<p><strong>password:</strong> <em>123</em></p>
-<p>&nbsp;</p>
+<p>Credentials of the SuperAdmin are :</p>
+<p><strong>Email:&nbsp;</strong><em>admin@ncsu.edu</em></p>
+<p><strong>Password:</strong> <em>123</em></p>
+
+<h2>2.0 Release Notes</h2>
+The following functions were added after the first review:
+<ol>
+<li>Disabled deleting SuperAdmin</li>
+<li>Admins can create new library members (before only new admins could be created).</li>
+<li>Admins can book rooms on behalf of other library members</li>
+<li>View Booking History</li>
+<li>Email Notifications on Signup and on booking a room.</li>
+<li>Members can invite friends through email while booking a room.</li>
+</ol>
 <h2>Libaray Members</h2>
 <p>Libarary Members are created as users in the backend. The following are the functions a libaray member can perform</p>
 <ul>
