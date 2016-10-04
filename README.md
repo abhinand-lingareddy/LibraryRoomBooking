@@ -33,7 +33,7 @@ The following are the functions a libaray member can perform</p>
 <ul>
 <li>Create other Admins (Home --> Create New User --> select "yes" for admin attribute)</li>
 <li>Create Library Member (Home --> Create New User --> select "no" for admin attribute)</li>
-<li>View list of all users, admins, members (Home --> List Users/Admins/Members)<li>
+<li>View list of all users, admins, members (Home --> List Users/Admins/Members)</li>
 <li>Edit/Delete profiles of users (Home --> List Users --> Edit/Destroy)/li>
 <li>Create New Rooms (Home --> Manage Rooms --> Create New Room)</li>
 <li>Book on behalf of other members (select username for "On behalf of") </li>
@@ -46,4 +46,11 @@ The following are the functions a libaray member can perform</p>
 <li>A day is divided into two hour slots starting from 0-2hrs, 2-4hrs ... 22-24hrs</li>
 <li>Buildingnames include <strong>hunt</strong> and <strong>hill</strong>&nbsp;</li>
 <li>Room capacities currently available are <strong>small, meduim</strong> and <strong>large</strong></li>
+</ul>
+
+<h2>Future Releases</h2>
+The following functions can be added in the future:
+<ul>
+<li>Currently, the booking slots are very rigid i.e only allows 0-2, 2-4 etc. Users should be allowed to book arbitrary two hour slots</li>
+<li>Allow users to book multiple slots in single booking</li>
 </ul>
