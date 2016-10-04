@@ -3,7 +3,7 @@
 
 <% if session[:admin]%>
     <h2><%= link_to 'List All Users', users_path%> | <%= link_to 'List Admins', users_list_admins_path%> | List Members</h2>
-    
+
     <%= render 'list'%>
 
 

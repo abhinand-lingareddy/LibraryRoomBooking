@@ -54,8 +54,8 @@
       <% if session[:user_id] && session[:admin]%>
       On Behalf of: <%= select_tag "user_id", options_for_select(@usersHash) %><br><br>
           <% end %>
-      Invite: <%= text_field_tag "emails" %><br><br>
-      please give emails in comma seperated eg: abc@gmail.com,xyz@gmail.com<br><br>
+      Invite: <%= text_field_tag "emails" %> (please give emails in comma seperated eg: abc@gmail.com,xyz@gmail.com) <br><br>
+      <br><br>
   <%= f.submit "Book Room"%>
   <% end %>
 </p>
