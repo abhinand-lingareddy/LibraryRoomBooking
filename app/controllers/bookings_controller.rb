@@ -12,7 +12,12 @@ class BookingsController < ApplicationController
       @room = Room.find(params[:room_id])
       @user= User.find(session[:user_id])
       @booking=Booking.find(id)
-      BookingMailer.booking_email(@booking,@user,@room).deliver_now!
+      BookingMailer.booking_email(@booking,@user.email,@room).deliver_now!
+      emails=params[:emails]
+      values=emails.split(",")
+      values.each do |value|
+        BookingMailer.booking_email(@booking,value,@room).deliver_now!
+      end
       flash["notice"]="booking sucessfully created, check email for more details"
       redirect_to room_path(@room)
     rescue Exception
