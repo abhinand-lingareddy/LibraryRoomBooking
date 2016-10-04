@@ -2,17 +2,11 @@
 <%= render 'sessions/notice' %>
 
 <% if session[:admin]%>
-    <h2>List Users</h2>
+    <h2>List All Users | <%= link_to 'List Admins', users_list_admins_path%> | <%= link_to 'List Members', users_list_members_path%></h2>
 
     <%= render 'list'%>
 
-    <br>
-    <% if session[:user_id]%>
-        <p>
-          <%= link_to 'Back to Home', sessions_home_path %>&nbsp&nbsp|&nbsp&nbsp
-          <%= link_to 'Logout', sessions_logout_path%>
-        </p>
-    <% end%>
+    <%= render 'footer' %>
 
 
 <% end%>

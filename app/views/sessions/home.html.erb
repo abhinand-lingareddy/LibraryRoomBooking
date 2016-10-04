@@ -6,7 +6,7 @@
 <% if session[:user_id] && session[:admin]%>
     <h3>Manage Users</h3>
     <ul>
-      <li><%= link_to 'List Users', users_path%></li>
+      <li><%= link_to 'List All Users', users_path%></li>
       <li><%= link_to 'List Admins', users_list_admins_path%></li>
       <li><%= link_to 'List Members', users_list_members_path%></li><br>
 

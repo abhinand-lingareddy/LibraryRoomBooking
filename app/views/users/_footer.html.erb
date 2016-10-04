@@ -1,0 +1,7 @@
+<hr>
+<% if session[:user_id]%>
+    <p>
+      <%= link_to 'Back to Home', sessions_home_path %>&nbsp&nbsp|&nbsp&nbsp
+      <%= link_to 'Logout', sessions_logout_path%>
+    </p>
+<% end%>
