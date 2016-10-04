@@ -8,9 +8,14 @@ class BookingsController < ApplicationController
   def create
 
     begin
-      id=Booking.create(date:params[:date],endtime:(params[:time].to_i+2),user_id:session[:user_id],room_id:params[:room_id])
+      if params[:user_id]
+        userid=params[:user_id]
+      else
+        userid=session[:user_id]
+      end
+      id=Booking.create(date:params[:date],endtime:(params[:time].to_i+2),user_id:userid,room_id:params[:room_id])
       @room = Room.find(params[:room_id])
-      @user= User.find(session[:user_id])
+      @user= User.find(userid)
       @booking=Booking.find(id)
       BookingMailer.booking_email(@booking,@user.email,@room).deliver_now!
       emails=params[:emails]

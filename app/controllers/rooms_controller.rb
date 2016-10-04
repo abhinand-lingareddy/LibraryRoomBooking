@@ -41,6 +41,11 @@ class RoomsController < ApplicationController
     #time
     @time=(0..22).select {|x| x.even? }
     @room = Room.find(params[:id])
+    users= User.all
+    @usersHash = Hash.new
+    for user in users do
+      @usersHash[user.email]=user.id
+    end
 
   end
 
