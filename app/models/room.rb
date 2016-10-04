@@ -1,5 +1,6 @@
 class Room < ActiveRecord::Base
   has_many :bookings, :dependent => :delete_all
+  validates :roomnumber, :presence => true, uniqueness: true,:numericality => {:only_integer => true}
   enum buildingname: [ :hunt, :hill ]
   enum capacity: [ :small, :medium, :large ]
 
