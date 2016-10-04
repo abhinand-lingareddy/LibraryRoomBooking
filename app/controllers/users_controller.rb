@@ -50,16 +50,19 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    if session[:user_id] && session[:admin]
+=begin
+    if session[:user_id] && session[:admin] && params[:admin]== true
       @user.update_attribute :admin, true
     else
       @user.update_attribute :admin, false
     end
+=end
+
 
     respond_to do |format|
       if @user.save
         UserMailer.welcome_email(@user).deliver_now!
-        format.html { redirect_to @user, notice: 'User was successfully created,please check email for more details' }
+        format.html { redirect_to @user, notice: 'User was successfully created,please check email for more details ' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
