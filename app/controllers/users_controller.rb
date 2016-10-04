@@ -50,14 +50,10 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-=begin
-    if session[:user_id] && session[:admin] && params[:admin]== true
-      @user.update_attribute :admin, true
-    else
+
+    if not session[:admin]
       @user.update_attribute :admin, false
     end
-=end
-
 
     respond_to do |format|
       if @user.save
