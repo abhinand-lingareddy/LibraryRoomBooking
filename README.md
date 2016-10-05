@@ -4,7 +4,7 @@
 <p><strong>Email:&nbsp;</strong><em>admin@ncsu.edu</em></p>
 <p><strong>Password:</strong> <em>123</em></p>
 
-<h2>2.0 Release Notes</h2>
+<h2>Recent Modifications</h2>
 The following modifications were made after the first review:
 <ol>
 <li>Disabled deleting SuperAdmin</li>
@@ -21,22 +21,22 @@ The following modifications were made after the first review:
 <p>Libarary Members can either sign up through the link on the login page or can be created by an admin.<br>
 The following are the functions a libaray member can perform</p>
 <ul>
-<li>View Profile (Home --> View Profile)</li>
-<li>Update profile (Home --> Edit Profile)</li>
-<li>Search Rooms based on room number, buildingname, capacity(Home --> Search/Book Rooms)</li>
-<li>Book available rooms upto 1 week in advance (Home --> Search/Book Rooms --> Details(for any room) --> Booking section(bottom of page))</li>
-<li>Release bookings (Home --> Search/Book Rooms --> Details(for any room) --> Release Booking(for corresponding reservation))</li>
+<li>View Profile <br>(Home &#8594; View Profile)</li>
+<li>Update profile <br>(Home &#8594; Edit Profile)</li>
+<li>Search Rooms based on room number, buildingname, capacity<br>(Home &#8594; Search/Book Rooms)&#8594;
+<li>Book available rooms upto 1 week in advance <br>(Home &#8594; Search/Book Rooms &#8594; Details(for corresponding room) &#8594; Booking section(bottom of page) )</li>
+<li>Release bookings <br>(Home &#8594; Search/Book Rooms &#8594; Details(for corresponding room) &#8594; Release Booking(for corresponding reservation))</li>
 </ul>
 
 <h2>Admins</h2>
 <p>Admins can do everything a user can do. In addition he/she can also do the following:</p>
 <ul>
-<li>Create other Admins (Home --> Create New User --> select "yes" for admin attribute)</li>
-<li>Create Library Member (Home --> Create New User --> select "no" for admin attribute)</li>
-<li>View list of all users, admins, members (Home --> List Users/Admins/Members)</li>
-<li>Edit/Delete profiles of users (Home --> List Users --> Edit/Destroy)/li>
-<li>Create New Rooms (Home --> Manage Rooms --> Create New Room)</li>
-<li>Book on behalf of other members (select username for "On behalf of") </li>
+<li>Create other Admins <br>(Home &#8594; Create New User &#8594; select "yes" for admin attribute)</li>
+<li>Create Library Member <br>(Home &#8594; Create New User &#8594; select "no" for admin attribute)</li>
+<li>View list of all users, admins, members <br>(Home &#8594; List Users/Admins/Members)</li>
+<li>Edit/Delete profiles of users <br>(Home &#8594; List Users &#8594; Edit/Destroy)</li>
+<li>Create New Rooms (Home &#8594; Manage Rooms &#8594; Create New Room)</li>
+<li>Book on behalf of other members <br>(While booking, select corresponding username for "On behalf of") </li>
 </ul>
 
 <h2>Room</h2>
