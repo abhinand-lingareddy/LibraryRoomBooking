@@ -23,7 +23,7 @@ The following are the functions a libaray member can perform</p>
 <ul>
 <li>View Profile <br>(Home &#8594; View Profile)</li>
 <li>Update profile <br>(Home &#8594; Edit Profile)</li>
-<li>Search Rooms based on room number, buildingname, capacity<br>(Home &#8594; Search/Book Rooms);
+<li>Search Rooms based on room number, buildingname, capacity<br>(Home &#8594; Search/Book Rooms)</li>
 <li>Book available rooms upto 1 week in advance <br>(Home &#8594; Search/Book Rooms &#8594; Details(for corresponding room) &#8594; Booking section(bottom of page) )</li>
 <li>Release bookings <br>(Home &#8594; Search/Book Rooms &#8594; Details(for corresponding room) &#8594; Release Booking(for corresponding reservation))</li>
 </ul>
