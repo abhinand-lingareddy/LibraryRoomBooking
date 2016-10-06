@@ -1,13 +1,11 @@
 require 'date'
 class RoomsController < ApplicationController
   def index
-    if params[:field]
-      @rooms = Room.search(params[:field],params[:search])
-    else
-      @rooms =Room.all
-    end
-    @field = {"Room Number"=>"roomnumber","Building Name"=>"buildingname", "Capacity"=>"capacity"}
+    room_search
+    search_options
   end
+
+
 
   def new
     @room = Room.new
@@ -34,25 +32,50 @@ class RoomsController < ApplicationController
 
   def show
     #date
-    start_date = Date.today
-    end_date = 7.days.from_now
-    @date = (start_date..end_date);
+    date_options
 
     #time
-    @time=(0..22).select {|x| x.even? }
+    time_options
     @room = Room.find(params[:id])
-    users= User.all
-    @usersHash = Hash.new
-    for user in users do
-      @usersHash[user.email]=user.id
-    end
+    username_from_id
 
   end
+
 
 
 
   private
   def room_params
     params.require(:room).permit(:roomnumber, :buildingname,:capacity )
+  end
+
+  def search_options
+    @field = {"Room Number" => "roomnumber", "Building Name" => "buildingname", "Capacity" => "capacity"}
+  end
+
+  def room_search
+    if params[:field]
+      @rooms = Room.search(params[:field], params[:search])
+    else
+      @rooms =Room.all
+    end
+  end
+
+  def time_options
+    @time=(0..22).select { |x| x.even? }
+  end
+
+  def username_from_id
+    users= User.all
+    @usersHash = Hash.new
+    for user in users do
+      @usersHash[user.email]=user.id
+    end
+  end
+
+  def date_options
+    start_date = Date.today
+    end_date = 7.days.from_now
+    @date = (start_date..end_date)
   end
 end

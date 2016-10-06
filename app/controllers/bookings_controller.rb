@@ -15,14 +15,7 @@ class BookingsController < ApplicationController
       end
       id=Booking.create(date:params[:date],endtime:(params[:time].to_i+2),user_id:userid,room_id:params[:room_id])
       @room = Room.find(params[:room_id])
-      @user= User.find(userid)
-      @booking=Booking.find(id)
-      BookingMailer.booking_email(@booking,@user.email,@room).deliver_now!
-      emails=params[:emails]
-      values=emails.split(",")
-      values.each do |value|
-        BookingMailer.booking_email(@booking,value,@room).deliver_now!
-      end
+      sending_email(id, userid)
       flash["notice"]="booking sucessfully created, check email for more details"
       redirect_to room_path(@room)
     rescue Exception
@@ -31,6 +24,8 @@ class BookingsController < ApplicationController
     end
 
   end
+
+
 
   def destroy
     @room = Room.find(params[:room_id])
@@ -41,5 +36,17 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit( :time)
+  end
+
+  private
+  def sending_email(id, userid)
+    @user= User.find(userid)
+    @booking=Booking.find(id)
+    BookingMailer.booking_email(@booking, @user.email, @room).deliver_now!
+    emails=params[:emails]
+    values=emails.split(",")
+    values.each do |value|
+      BookingMailer.booking_email(@booking, value, @room).deliver_now!
+    end
   end
 end

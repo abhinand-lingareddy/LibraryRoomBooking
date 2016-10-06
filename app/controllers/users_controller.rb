@@ -36,19 +36,10 @@ class UsersController < ApplicationController
       id=session[:user_id]
     end
     user=User.find(id)
-    bookings=user.bookings
-    today_date=Date.today
-    current_time=Time.now.hour
-    @old_booking=Array.new
-    @new_booking=Array.new
-    for booking in bookings
-      if booking.date<today_date or (booking.date==today_date and booking.endtime<current_time)
-        @old_booking.append booking
-      else
-        @new_booking.append booking
-      end
-    end
+    categorize_booking(user)
   end
+
+
 
   # POST /users
   # POST /users.json
@@ -110,5 +101,20 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :name, :password, :admin)
+    end
+
+    def categorize_booking(user)
+      bookings=user.bookings
+      today_date=Date.today
+      current_time=Time.now.hour
+      @old_booking=Array.new
+      @new_booking=Array.new
+      for booking in bookings
+        if booking.date<today_date or (booking.date==today_date and booking.endtime<current_time)
+          @old_booking.append booking
+        else
+          @new_booking.append booking
+        end
+      end
     end
 end

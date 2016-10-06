@@ -5,8 +5,7 @@ class SessionsController < ApplicationController
   def login_attempt
     authorized_user = User.authenticate(params[:username],params[:password])
     if authorized_user
-      session[:user_id]= authorized_user.id
-      session[:admin] = authorized_user.admin
+      session_add(authorized_user)
       redirect_to(:action => 'home')
 
     else
@@ -15,12 +14,26 @@ class SessionsController < ApplicationController
     end
   end
 
+
+
   def home
   end
 
   def logout
-    session[:user_id] = nil
-    session[:admin] = nil
+    session_remove
     redirect_to :action => 'login'
   end
+
+  private
+  def session_add(authorized_user)
+    session[:user_id]= authorized_user.id
+    session[:admin] = authorized_user.admin
+  end
+
+  def session_remove
+    session[:user_id] = nil
+    session[:admin] = nil
+  end
+
+
 end
