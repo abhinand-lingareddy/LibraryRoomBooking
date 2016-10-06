@@ -26,7 +26,8 @@
         <td><%= user.admin %></td>
         <td><%= link_to 'Profile', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <% if(user.id != session[:user_id]  and user.id != 1)%>
+        <td><%= link_to 'History', users_history_path(user) %></td>
+        <% if(user.id != session[:user_id] and user.id != 1)%>
             <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
       </tr>

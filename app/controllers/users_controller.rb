@@ -30,7 +30,11 @@ class UsersController < ApplicationController
   end
 
   def history
-    id=session[:user_id]
+    if params[:format]
+      id = params[:format]
+    else
+      id=session[:user_id]
+    end
     user=User.find(id)
     bookings=user.bookings
     today_date=Date.today
