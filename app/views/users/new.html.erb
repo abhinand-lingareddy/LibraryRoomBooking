@@ -4,8 +4,4 @@
 <%= render 'form' %>
 
 <br>
-<% if session[:user_id]%>
-    <%=link_to 'Back to Home', sessions_home_path%>
-<%else%>
-    <%=link_to 'Back to Login', sessions_login_path%>
-<%end%>
+<%= render 'footer' %>

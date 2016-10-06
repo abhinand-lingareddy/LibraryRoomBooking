@@ -2,8 +2,15 @@
 <h2>Home Page</h2>
 <p><%= link_to 'Logout', sessions_logout_path%></p>
 
-<p><%= link_to 'Profile', User.find(session[:user_id])%></p><br>
+<br>
+<h3>Profile</h3>
+<ul>
+  <li><%= link_to 'View Profile', User.find(session[:user_id])%></li>
+  <li><%= link_to 'Edit Profile', edit_user_path(User.find(session[:user_id]))%></li>
+</ul>
+
 <% if session[:user_id] && session[:admin]%>
+    <br>
     <h3>Manage Users</h3>
     <ul>
       <li><%= link_to 'List All Users', users_path%></li>
@@ -13,10 +20,16 @@
       <li><%= link_to 'Create New User', new_user_path%></li>
     </ul>
     <br>
-
-    <p><%= link_to 'Manage Rooms', rooms_path%></p>
-<% else %>
-    <p><%= link_to 'Book Rooms', rooms_path%></p>
 <% end %>
-<p><%= link_to 'Booking History', '/users/history'%></p>
-
+<br>
+<h3>Booking Rooms</h3>
+<ul>
+<li>
+<% if session[:user_id] && session[:admin]%>
+    <%= link_to 'Manage Rooms', rooms_path%>
+<% else %>
+    <%= link_to 'Search/Book Rooms', rooms_path%>
+<% end %>
+</li>
+<li><%= link_to 'Booking History', '/users/history'%></li>
+</ul>
