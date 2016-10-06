@@ -1,5 +1,5 @@
 <h1><strong>Library Room Booking Application</strong></h1>
-<p><strong>Deployed at&nbsp;<a href="https://ooddlibroombooking.herokuapp.com/">https://ooddlibroombooking.herokuapp.com/</a></strong></p>
+<p><strong>Deployed at&nbsp;<a href="https://ncsulibraryroombooking.herokuapp.com/">https://ncsulibraryroombooking.herokuapp.com/</a></strong></p>
 <p>Credentials of the SuperAdmin are :</p>
 <p><strong>Email:&nbsp;</strong><em>admin@ncsu.edu</em></p>
 <p><strong>Password:</strong> <em>123</em></p>
